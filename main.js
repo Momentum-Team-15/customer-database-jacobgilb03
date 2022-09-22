@@ -20,7 +20,11 @@ function buildDirectory(customerArray) {
         let state = document.createElement("p");
         let dateOfBirth = document.createElement("p");
         let customerSince = document.createElement("p");
-        email.classList.add("gray")
+
+        email.classList.add("gray");
+        state.classList.add("space");
+        email.classList.add("space")
+
         customerImage.src = customer.picture.medium;
         name.innerText = `${capitalizeFirstLetter(customer.name.title)} ${capitalizeFirstLetter(customer.name.first)} ${capitalizeFirstLetter(customer.name.last)}`;
         email.innerText = `${customer.email}`
@@ -28,6 +32,7 @@ function buildDirectory(customerArray) {
         state.innerText = `${customer.location.city},  ${nameToAbbr(customer.location.state)} ${customer.location.postcode}`;
         dateOfBirth.innerText = `DOB: ${moment(customer.dob.date).format('MMM Do, YYYY')}`
         customerSince.innerText = `Customer since: ${moment(customer.registered.date).format('MMM Do, YYYY')}`
+
         customerDiv.appendChild(customerImage);
         customerDiv.appendChild(name);
         customerDiv.appendChild(email);
